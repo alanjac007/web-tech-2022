@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+    <script>
+        $(document).ready(function() {
+            $(document).keydown (function(event) {
+                event.preventDefault();
+                let key = event.which; // 37-left, 38-up, 39-right, 40-down
+                let car = $('#car');
+                switch (key) {
+                    case 37:
+                        {car.css('transform', 'rotateY(180deg)')
+                        car.animate({left: "-=5px"}, 1);
+                        break;}
+                    case 38:
+                        {car.css('transform', 'rotate(270deg)')
+                        car.animate({top: "-=5px"}, 1);
+                        break;}
+                    case 39:
+                        {car.css('transform', 'rotate(0deg)')
+                        car.animate({left: "+=5px"}, 1);
+                        break;}
+                    case 40:
+                        {car.css('transform', 'rotate(90deg)')
+                        car.animate({top: "+=5px"}, 1);
+                        break;}
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+   
+    <div id="car" style="position: absolute; left:50px; top: 10px; width: 130px; height: 140px;">
+    <img src="C:\Users\alanj\OneDrive\Desktop\car1.png" alt="moving car" height="140px" width="230px">
+    </div>
+</body>
+</html>
